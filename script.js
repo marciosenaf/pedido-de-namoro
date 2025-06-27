@@ -48,6 +48,20 @@ function getRandomPosition() {
     return { x: randomX, y: randomY };
 }
 
+//tela cheia
+
+function abrirTelaCheia() {
+  const elem = document.getElementById("conteudo");
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { // Safari
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { // IE11
+    elem.msRequestFullscreen();
+  }
+}
+
+
 // Função para mover o botão com animação suave usando left/top
 function moveButton() {
     const position = getRandomPosition();
