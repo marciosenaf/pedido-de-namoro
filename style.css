@@ -240,7 +240,7 @@ button {
     font-size: 2em;
     margin-top: 20px;
     color: var(--text-color);
-    background-color: black;
+    background-color: #FF033E;
     border-radius: 10px
 }
 
