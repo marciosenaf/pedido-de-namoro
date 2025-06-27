@@ -234,3 +234,13 @@ button {
         font-size: 1.5rem;
     }
 }
+
+
+#tempo {
+    font-size: 2em;
+    margin-top: 20px;
+    color: var(--text-color);
+    background-color: black;
+    border-radius: 10px;
+    
+}
