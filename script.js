@@ -48,18 +48,46 @@ function getRandomPosition() {
     return { x: randomX, y: randomY };
 }
 
+
+//cronometro 
+
+const inicioNamoro = new Date("2025-06-26T23:00:00");
+
+function atualizarContagem() {
+    const agora = new Date();
+    const diferenca = agora - inicioNamoro;
+
+    const segundosTotais = Math.floor(diferenca / 1000);
+
+    const dias = Math.floor(segundosTotais / (3600 * 24));
+    const horas = Math.floor((segundosTotais % (3600 * 24)) / 3600);
+    const minutos = Math.floor((segundosTotais % 3600) / 60);
+    const segundos = segundosTotais % 60;
+
+    document.getElementById("dias").textContent = dias;
+    document.getElementById("horas").textContent = horas;
+    document.getElementById("minutos").textContent = minutos;
+    document.getElementById("segundos").textContent = segundos;
+}
+
+setInterval(atualizarContagem, 1000);
+atualizarContagem(); // Chama logo de início
+
+
 //tela cheia
 
-function abrirTelaCheia() {
-  const elem = document.getElementById("conteudo");
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { // Safari
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { // IE11
-    elem.msRequestFullscreen();
-  }
-}
+document.getElementById('sim').addEventListener('click', () => {
+    const element = document.documentElement; // pega o <html>
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) { // Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE11
+        element.msRequestFullscreen();
+    }
+});
+
 
 
 // Função para mover o botão com animação suave usando left/top
