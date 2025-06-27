@@ -239,8 +239,7 @@ button {
 #tempo {
     font-size: 2em;
     margin-top: 20px;
-    color: var(--text-color);
-    background-color: #c41b43;
+    background-color: #000000;
     border-radius: 10px
 }
 
