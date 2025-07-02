@@ -239,7 +239,8 @@ button {
 #tempo {
     font-size: 2em;
     margin-top: 20px;
-    background-color: #ffffff;
+    background: var(--gold-gradient);
+    color: var(--primary-color);
     border-radius: 10px
 }
 
