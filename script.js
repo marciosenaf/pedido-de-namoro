@@ -286,3 +286,21 @@ naoButton.addEventListener('mouseover', () => {
         naoButton.style.transform = 'scale(0.8)';
     }
 });
+
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open("app-cache").then(cache => {
+      return cache.addAll(["/", "/index.html", "/style.css", "/script.js"]);
+    })
+  );
+});
+
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(response => response || fetch(e.request))
+  );
+});
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
